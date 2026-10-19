@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sasi Pretham Minda — AWS DevOps Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Sora:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3f1ec;--card:#fff;--tx:#14110f;--mut:#6b655d;--ln:#e0dbd2;--a:#ff5a1f;--b:#6d4aff;--code:#14110f;--ct:#d9f99d;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b0b12;--card:#13131d;--tx:#f1f0f7;--mut:#8f8ca3;--ln:#25253a;--a:#ff7a45;--b:#9b84ff;--code:#07070c;--ct:#a3e635;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0b0b12;--card:#13131d;--tx:#f1f0f7;--mut:#8f8ca3;--ln:#25253a;--a:#ff7a45;--b:#9b84ff;--code:#07070c;--ct:#a3e635;color-scheme:dark}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth}*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--tx);font:16px/1.6 Sora,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.w{max-width:1100px;margin:0 auto;padding:0 20px}
+.mono{font-family:'JetBrains Mono',ui-monospace,monospace}
+header{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+.lg{font:600 15px 'JetBrains Mono',monospace}.lg i{color:var(--a);font-style:normal}
+.pill{font:600 13px 'JetBrains Mono',monospace;padding:9px 16px;border-radius:99px;background:var(--tx);color:var(--bg)}
+.bento{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
+.c{background:var(--card);border:1px solid var(--ln);border-radius:22px;padding:26px;min-width:0}
+.s12{grid-column:span 12}.s8{grid-column:span 8}.s7{grid-column:span 7}.s6{grid-column:span 6}.s5{grid-column:span 5}.s4{grid-column:span 4}.s3{grid-column:span 3}
+@media(max-width:820px){.s8,.s7,.s6,.s5,.s4{grid-column:span 12}.s3{grid-column:span 6}}
+.lab{font:600 12px 'JetBrains Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);margin-bottom:14px}
+.lab b{color:var(--a)}
+h1{font:800 clamp(40px,7.5vw,84px)/.98 Sora,sans-serif;letter-spacing:-.04em}
+h1 em{font-style:normal;background:linear-gradient(90deg,var(--a),var(--b));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{margin-top:20px;color:var(--mut);max-width:560px;font-size:17px}
+.term{background:var(--code);color:var(--ct);border-radius:22px;padding:22px;font:13.5px/1.9 'JetBrains Mono',monospace;border:1px solid var(--ln)}
+.term .d{display:flex;gap:6px;margin-bottom:12px}.term .d i{width:10px;height:10px;border-radius:50%;background:#ff5f57}.term .d i:nth-child(2){background:#febc2e}.term .d i:nth-child(3){background:#28c840}
+.term span{color:#8f8ca3}.term q{color:#fff;quotes:none}
+.n{font:800 clamp(34px,5vw,52px)/1 Sora,sans-serif;letter-spacing:-.03em}
+.n small{font-size:.45em;color:var(--a)}
+.nl{color:var(--mut);font-size:14px;margin-top:8px}
+.flow{display:flex;flex-wrap:wrap;gap:6px 4px;align-items:center;font:600 12.5px 'JetBrains Mono',monospace}
+.flow span{padding:7px 11px;border-radius:9px;border:1px solid var(--ln);background:var(--bg)}.flow i{color:var(--a);font-style:normal}
+.tags{display:flex;flex-wrap:wrap;gap:7px}
+.tags span{font:500 12.5px 'JetBrains Mono',monospace;padding:5px 11px;border-radius:8px;background:var(--bg);border:1px solid var(--ln)}
+.tags .k{background:linear-gradient(90deg,var(--a),var(--b));color:#fff;border:0}
+h2{font:800 clamp(26px,4vw,38px)/1.1 Sora,sans-serif;letter-spacing:-.03em;margin:64px 0 20px}
+details{background:var(--card);border:1px solid var(--ln);border-radius:18px;margin-bottom:10px;overflow:hidden}
+summary{list-style:none;cursor:pointer;display:flex;gap:16px;align-items:center;padding:18px 22px;font-weight:600}
+summary::-webkit-details-marker{display:none}
+summary .i{font:600 13px 'JetBrains Mono',monospace;color:var(--a)}
+summary::after{content:"+";margin-left:auto;font:400 24px 'JetBrains Mono',monospace;color:var(--mut)}
+details[open] summary::after{content:"−"}
+details p{padding:0 22px 20px 62px;color:var(--mut);font-size:15px}details p b{color:var(--tx)}
+.job{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:18px}
+.job h3{font:800 22px Sora,sans-serif}.job span{font:600 13px 'JetBrains Mono',monospace;color:var(--a)}
+.ct{display:block;transition:.2s}.ct:hover{transform:translateY(-4px);border-color:var(--a)}
+.ct small{font:600 12px 'JetBrains Mono',monospace;color:var(--mut);display:block;margin-bottom:6px}.ct b{word-break:break-word}
+footer{padding:50px 0 34px;color:var(--mut);font:13px 'JetBrains Mono',monospace;text-align:center}
+</style></head><body>
+<div class="w">
+<header><div class="lg"><i>~/</i>sasi-pretham</div><a class="pill" href="#contact">hire me →</a></header>
+
+<div class="bento">
+<div class="c s8" style="padding:38px">
+<div class="lab"><b>●</b> Available for new roles · Hyderabad, IN</div>
+<h1>Shipping cloud<br>infra that <em>never sleeps.</em></h1>
+<p class="sub">I’m <b style="color:var(--tx)">Sasi Pretham Minda</b>, an AWS DevOps Engineer automating CI/CD, Kubernetes and Terraform for secure, zero-downtime releases.</p>
+</div>
+<div class="term s4">
+<div class="d"><i></i><i></i><i></i></div>
+<span>$</span> <q>whoami</q><br>sasi-pretham-minda<br>
+<span>$</span> <q>cat role.txt</q><br>AWS DevOps Engineer<br>
+<span>$</span> <q>stack --core</q><br>aws k8s terraform jenkins<br>
+<span>$</span> <q>deploy --status</q><br>✔ zero-downtime
+</div>
+
+<div class="c s3"><div class="n">3<small>+</small></div><div class="nl">Years in DevOps</div></div>
+<div class="c s3"><div class="n">&lt;15<small>min</small></div><div class="nl">Build-to-deploy</div></div>
+<div class="c s3"><div class="n">3<small>×</small></div><div class="nl">Traffic spikes handled</div></div>
+<div class="c s3"><div class="n">3</div><div class="nl">Projects standardized</div></div>
+
+<div class="c s12"><div class="lab"><b>01</b> / Delivery flow I build</div>
+<div class="flow"><span>GitHub</span><i>→</i><span>Jenkins</span><i>→</i><span>Maven</span><i>→</i><span>SonarQube gate</span><i>→</i><span>Docker</span><i>→</i><span>Trivy scan</span><i>→</i><span>ECR</span><i>→</i><span>Argo CD</span><i>→</i><span>EKS</span></div></div>
+</div>
+
+<h2>Toolkit</h2>
+<div class="bento">
+<div class="c s7"><div class="lab"><b>AWS</b> / Cloud</div><div class="tags"><span class="k">EC2</span><span class="k">EKS</span><span class="k">ECS Fargate</span><span class="k">ECR</span><span>S3</span><span>VPC</span><span>IAM</span><span>RDS</span><span>DynamoDB</span><span>ElastiCache</span><span>Elastic Beanstalk</span><span>ALB</span><span>Route 53</span><span>CloudWatch</span></div></div>
+<div class="c s5"><div class="lab"><b>CI/CD</b> / GitOps</div><div class="tags"><span class="k">Jenkins</span><span class="k">Argo CD</span><span>Declarative Pipelines</span><span>Shared Libraries</span><span>GitHub</span><span>Git</span><span>Maven</span></div></div>
+<div class="c s4"><div class="lab"><b>K8s</b> / Containers</div><div class="tags"><span class="k">Kubernetes</span><span class="k">Docker</span><span>Amazon EKS</span><span>ECS Fargate</span></div></div>
+<div class="c s4"><div class="lab"><b>IaC</b> / Terraform</div><div class="tags"><span class="k">Terraform</span><span>Modules</span><span>Variables</span><span>Outputs</span><span>Plan / Apply</span></div></div>
+<div class="c s4"><div class="lab"><b>Deploy</b> / Strategies</div><div class="tags"><span>Blue-Green</span><span>Rolling Updates</span><span>Instant rollback</span></div></div>
+<div class="c s6"><div class="lab"><b>Sec</b> / Monitoring &amp; Security</div><div class="tags"><span>CloudWatch</span><span>Prometheus</span><span>Grafana</span><span>SonarQube</span><span>Trivy</span><span>AWS WAF</span><span>OWASP</span><span>IAM least privilege</span></div></div>
+<div class="c s6"><div class="lab"><b>Code</b> / Scripting, Data &amp; OS</div><div class="tags"><span>Bash</span><span>Groovy</span><span>YAML</span><span>MySQL</span><span>DynamoDB</span><span>Redis</span><span>Linux</span><span>Ubuntu</span><span>Windows</span><span>SDLC</span><span>Agile/Scrum</span></div></div>
+</div>
+
+<h2>Experience</h2>
+<div class="c" style="padding:30px">
+<div class="job"><div><h3>AWS DevOps Engineer</h3><div class="nl" style="margin-top:2px">SPY D Technology Pvt. Ltd · Hyderabad, India</div></div><span>Jun 2023 → Present</span></div>
+<details open><summary><span class="i">01</span>CI/CD automation with Jenkins</summary><p>Built declarative Groovy pipelines covering checkout, Maven build/test, SonarQube quality gate, Docker build/push and deploy — <b>build-to-deploy under 15 minutes</b>, replacing manual releases.</p></details>
+<details><summary><span class="i">02</span>Standardized builds across 3 projects</summary><p>Reusable Jenkins shared libraries, parameterized pipelines, GitHub webhooks and multibranch pipelines for <b>3 concurrent projects</b>.</p></details>
+<details><summary><span class="i">03</span>Kubernetes on Amazon EKS</summary><p>Provisioned EKS clusters and node groups; deployed Deployments, Services, Ingress, ConfigMaps and Secrets with probes and resource limits for <b>zero-downtime rolling updates</b>.</p></details>
+<details><summary><span class="i">04</span>GitOps with Argo CD &amp; blue-green</summary><p>Git-driven delivery to EKS with automated sync and <b>one-step rollbacks</b>, plus blue-green releases with instant rollback.</p></details>
+<details><summary><span class="i">05</span>Infrastructure as Code with Terraform</summary><p>Reusable modules for VPC, subnets, security groups, EC2 and EKS — repeatable environments and <b>no configuration drift</b>.</p></details>
+<details><summary><span class="i">06</span>Full-stack AWS deployments</summary><p>S3 frontend with EC2, Elastic Beanstalk and <b>ECS Fargate</b> backends, automated ECR pushes and ECS task definitions — no EC2 server management.</p></details>
+<details><summary><span class="i">07</span>Scalable networking &amp; caching</summary><p>ALB, Route 53 and VPC design that handled <b>3× traffic spikes</b>; ElastiCache (Redis) offloaded the database and improved API response times.</p></details>
+<details><summary><span class="i">08</span>Security-first pipelines</summary><p><b>AWS WAF</b> with OWASP Top 10 managed rules blocking SQLi and XSS, SonarQube and Trivy in every release, private RDS (MySQL) with no public exposure, and least-privilege IAM.</p></details>
+<details><summary><span class="i">09</span>Containers &amp; registries</summary><p>Multi-stage Docker builds for Java and full-stack apps; versioned pushes to Amazon ECR and Docker Hub for traceable releases across dev, test and production.</p></details>
+<details><summary><span class="i">10</span>Monitoring &amp; observability</summary><p>CloudWatch, Prometheus and Grafana dashboards and alerts for EKS and Fargate workloads — <b>faster incident triage</b>.</p></details>
+</div>
+
+<h2>Education</h2>
+<div class="c" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;align-items:center">
+<div><b style="font-size:18px">B.Tech, Computer Science &amp; Engineering</b><div class="nl">Annamacharya Institute of Technology and Sciences, Hyderabad</div></div><span class="mono" style="color:var(--a);font-weight:600">2022</span></div>
+
+<h2 id="contact">Let’s talk</h2>
+<div class="bento">
+<a class="c ct s4" href="mailto:sasipretham25@gmail.com"><small>EMAIL</small><b>sasipretham25@gmail.com</b></a>
+<a class="c ct s4" href="tel:+919182493465"><small>PHONE</small><b>+91 91824 93465</b></a>
+<a class="c ct s4" href="https://www.linkedin.com/in/sasipretham-minda58b05631a" target="_blank" rel="noopener"><small>LINKEDIN</small><b>sasipretham-minda ↗</b></a>
+</div>
+<footer>© 2026 Sasi Pretham Minda · built with care, deployed with zero downtime</footer>
+</div></body></html>
